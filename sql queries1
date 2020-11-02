@@ -1,0 +1,109 @@
+mysql> select * from student1;
++-------+---------+-----------+
+| st_id | st_name | st_salary |
++-------+---------+-----------+
+|   101 | rani    |     20000 |
+|   102 | raji    |     30000 |
+|   103 | sai     |     25000 |
+|   104 | raji    |     40000 |
+|   105 | vani    |     50000 |
++-------+---------+-----------+
+5 rows in set (0.09 sec)
+mysql> select student1.st_salary from student1 ORDER BY st_salary;
++-----------+
+| st_salary |
++-----------+
+|     20000 |
+|     25000 |
+|     30000 |
+|     40000 |
+|     50000 |
++-----------+
+5 rows in set (0.00 sec)
+mysql> select student1.st_id,student1.st_name from student1 ORDER BY st_name;
++-------+---------+
+| st_id | st_name |
++-------+---------+
+|   102 | raji    |
+|   104 | raji    |
+|   101 | rani    |
+|   103 | sai     |
+|   105 | vani    |
++-------+---------+
+5 rows in set (0.02 sec)
+mysql> select student1.st_id from student1 ORDER BY st_id desc;
++-------+
+| st_id |
++-------+
+|   105 |
+|   104 |
+|   103 |
+|   102 |
+|   101 |
++-------+
+5 rows in set (0.00 sec)
+mysql> select student1.st_salary from student1 ORDER BY st_salary desc;
++-----------+
+| st_salary |
++-----------+
+|     50000 |
+|     40000 |
+|     30000 |
+|     25000 |
+|     20000 |
++-----------+
+5 rows in set (0.00 sec)
+mysql> select student1.st_salary from student1 ORDER BY st_salary Asc;
++-----------+
+| st_salary |
++-----------+
+|     20000 |
+|     25000 |
+|     30000 |
+|     40000 |
+|     50000 |
++-----------+
+5 rows in set (0.00 sec)
+mysql> select * from student1 LIMIT 2;
++-------+---------+-----------+
+| st_id | st_name | st_salary |
++-------+---------+-----------+
+|   101 | rani    |     20000 |
+|   102 | raji    |     30000 |
++-------+---------+-----------+
+2 rows in set (0.00 sec)
+mysql> select * from student1 ORDER BY st_id  DESC LIMIT 1;
++-------+---------+-----------+
+| st_id | st_name | st_salary |
++-------+---------+-----------+
+|   105 | vani    |     50000 |
++-------+---------+-----------+
+1 row in set (0.00 sec)
+mysql> select * from student1 WHERE st_id>2;
++-------+---------+-----------+
+| st_id | st_name | st_salary |
++-------+---------+-----------+
+|   101 | rani    |     20000 |
+|   102 | raji    |     30000 |
+|   103 | sai     |     25000 |
+|   104 | raji    |     40000 |
+|   105 | vani    |     50000 |
++-------+---------+-----------+
+5 rows in set (0.00 sec)
+mysql> select * from student1 WHERE st_id>2 AND st_salary>40000;
++-------+---------+-----------+
+| st_id | st_name | st_salary |
++-------+---------+-----------+
+|   105 | vani    |     50000 |
++-------+---------+-----------+
+1 row in set (0.00 sec)
+mysql> select DISTINCT  st_name from student1;
++---------+
+| st_name |
++---------+
+| rani    |
+| raji    |
+| sai     |
+| vani    |
++---------+
+4 rows in set (0.01 sec)
